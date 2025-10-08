@@ -4,7 +4,7 @@ import requests
 import os
 import sys
 import argparse
-from typing import Dict,Any
+from typing import Dict
 from .utils import log_error, log_success, log_warning, check_response, pretty_json
 
 
