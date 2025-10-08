@@ -24,7 +24,14 @@ classifiers = [
 ghadmin = "github_admin_cli.client:main"
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.5", "pip-audit>=2"]
+dev = [
+  "pytest>=8",
+  "pytest-cov>=5",
+  "ruff>=0.5",
+  "pip-audit>=2",
+  "build>=1"
+]
+
 
 [tool.ruff]
 line-length = 100
