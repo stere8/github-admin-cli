@@ -1,4 +1,5 @@
 * * * * *
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/95b95188-dd40-4137-b4a3-9df8aa48268a" />
 
 # GitHub Admin CLI
 > 🛠️ Lightweight Python tool to **archive, unarchive, privatize, or publicize GitHub repositories** via the official REST API.
