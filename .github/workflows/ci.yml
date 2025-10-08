@@ -24,6 +24,8 @@ jobs:
         run: pytest -q
       - name: pip-audit
         run: pip-audit -r <(pip freeze) || true
+      - name: Install build tool
+        run: python -m pip install --upgrade build
       - name: Build wheel
         run: python -m build
       - name: Upload dist artifacts
