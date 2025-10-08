@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "github-admin-cli"
+version = "0.1.0"
+description = "Lightweight CLI to archive/unarchive and toggle privacy of GitHub repositories via REST API."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "Oreste Twizeyimana" }]
+dependencies = ["requests>=2.31"]
+
+keywords = ["github", "cli", "devops", "automation"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+]
+
+[project.scripts]
+ghadmin = "github_admin_cli.client:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "pip-audit>=2"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

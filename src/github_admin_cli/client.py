@@ -1,17 +1,32 @@
+from __future__ import annotations
+
 import requests
 import os
 import sys
 import argparse
-from utils import log_error, log_success, log_warning, check_response, pretty_json
+from typing import Dict,Any
+from .utils import log_error, log_success, log_warning, check_response, pretty_json
+
+
+try:
+    from . import __version__
+except Exception:
+    __version__ = "0.1.0"
 
 TOKEN = os.environ.get('GITHUB_TOKEN')
 OWNER = "stere8"
 BASE = "https://api.github.com"
-COMMON_HEADERS = {
-    "Authorization": f"Bearer {TOKEN}" if TOKEN else "",
-    "Accept": "application/vnd.github+json",
-    "X-GitHub-Api-Version": "2022-11-28",
-}
+
+
+def build_headers(token:str) -> Dict[str,str]:
+    return {
+            "Authorization": f"Bearer {TOKEN}" if TOKEN else "",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+
+COMMON_HEADERS = build_headers(TOKEN)
+
 
 def endpoint(repo: str) -> str:
     return f"{BASE}/repos/{OWNER}/{repo}"
@@ -72,6 +87,3 @@ def main():
             pretty_json(r.json())
         except Exception:
             pass
-
-if __name__ == "__main__":
-    main()
