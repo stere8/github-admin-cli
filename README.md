@@ -1,6 +1,6 @@
 * * * * *
 
-`# GitHub Admin CLI
+# GitHub Admin CLI
 > 🛠️ Lightweight Python tool to **archive, unarchive, privatize, or publicize GitHub repositories** via the official REST API.
 
 [![CI](https://github.com/stere8/github-admin-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/stere8/github-admin-cli/actions)
