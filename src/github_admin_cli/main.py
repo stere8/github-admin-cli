@@ -10,7 +10,7 @@ BASE = "https://api.github.com"
 COMMON_HEADERS = {
     "Authorization": f"Bearer {TOKEN}" if TOKEN else "",
     "Accept": "application/vnd.github+json",
-    "X-Github-Api-Version": "2022-11-28",
+    "X-GitHub-Api-Version": "2022-11-28",
 }
 
 def endpoint(repo: str) -> str:
