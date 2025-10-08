@@ -41,14 +41,14 @@ def set_private(repo: str, private: bool):
     return requests.patch(endpoint(repo), headers=COMMON_HEADERS, json={"private": private})
 
 def main():
-    if not TOKEN:
-        log_error("GITHUB_TOKEN not set")
-        sys.exit(1)
-
     p = argparse.ArgumentParser(description="GitHub Repo Admin CLI (archive/private/public/check).")
     p.add_argument("action", choices=["stat", "archive", "unarchive", "private", "public", "check"])
     p.add_argument("repo", help="Repository name (e.g., stockitweb)")
     args = p.parse_args()
+
+    if not TOKEN:
+        log_error("GITHUB_TOKEN not set")
+        sys.exit(1)
 
     # Execute action
     if args.action == "archive":
