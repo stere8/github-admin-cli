@@ -1,3 +1,4 @@
+import subprocess, sys
+
 def test_cli_help():
-    import subprocess
-    subprocess.run(['ghadmin', '--help'],check=True)
+    subprocess.run([sys.executable, "-m", "github_admin_cli", "--help"], check=True)
