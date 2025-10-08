@@ -1,3 +1,3 @@
-def test_cli_help(temp_path):
+def test_cli_help():
     import subprocess
     subprocess.run(['ghadmin --help'],check=True)
